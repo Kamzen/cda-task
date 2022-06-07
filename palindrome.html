@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+    <style>
+        form{
+            text-align: center;
+            margin-top: 50px;
+        }
+        input{
+            width: 50%;
+            height: 40px;
+            border-radius: 10px;
+            border: 0.05em solid rgba(211, 211, 211, .35);
+        }
+        input::placeholder{
+            margin-left: 20px;
+        }
+        button{
+            height: 40px;
+            border-radius: 10px;
+            border: 0.05em solid rgba(211, 211, 211, .35);
+            background-color: lightgray;
+            color: black;
+            font-weight: bolder;
+            width: 25%;
+            margin-top: 20px;
+        }
+        p{
+            color: green;
+            font-size: 30px;
+            margin-top: 20px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Enter A String To Check Palindrome" class="input" id="input" /><br />
+        <button type="button" id="check">Check</button> 
+        <p id="resp"></p>
+    </form>
+</body>
+<script>
+    const palindrome = (arg) => {
+
+
+        // Loop through half the string
+        for(let i = 0; i < arg.legnth / 2; i++){
+
+            // Check if first and last characters are the same
+            if(arg[i] !== arg[arg.legnth - 1 -i]){
+                return false;
+            }
+
+        }
+        //If if inside the loop dont return false else return true
+        return true
+    }
+
+    document.getElementById('check').onclick = (e) => {
+        e.preventDefault();
+        let str = document.getElementById('input').value;
+
+        document.getElementById('resp').innerHTML = palindrome(str) ? str + " Is A Palindrome" : str + " Is Not A Palindrome";
+
+    }
+</script>
+</html>

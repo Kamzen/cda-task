@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+    <style>
+        .hello-world{
+            text-align: center;
+            margin-top: 50px;
+            font-size: 35px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div class="hello-world">
+        <span>Themba Makamu </span><span id="date"></span>
+    </div>
+</body>
+
+<script>
+    window.onload = () => {
+        document.getElementById('date').innerHTML = new Date().getDay() === 1 ? "Monday" : new Date().getDay() === 2 ? 
+        "Tuesday" : new Date().getDay() === 3 ? "Wednesday" : new Date().getDay() === 4 ? "Thursday" : new Date().getDay() === 5 ? 
+        "Friday" : new Date().getDay() === 6 ? "Saturday" : new Date().getDay() === 7 ? "Sunday" : "Error"; 
+    }
+</script>
+
+</html>
